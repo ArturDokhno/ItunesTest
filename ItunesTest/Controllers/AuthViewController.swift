@@ -104,7 +104,8 @@ class AuthViewController: UIViewController {
     }
     
     @objc func signUpButtonTapped() {
-        print("SingUp")
+        let signUpViewController = SignUpViewController()
+        self.present(signUpViewController, animated: true)
     }
     
     @objc func signInButtonTapped() {
