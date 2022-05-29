@@ -53,6 +53,7 @@ class AlbumsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupView()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -66,7 +67,7 @@ class AlbumsTableViewCell: UITableViewCell {
         self.addSubview(albumLogo)
         self.addSubview(albumNameLabel)
         
-        stackView = UIStackView(arrangedSubviews: [albumNameLabel, trackCountLabel],
+        stackView = UIStackView(arrangedSubviews: [artistNameLabel, trackCountLabel],
                                 axis: .horizontal,
                                 spacing: 10,
                                 distribution: .equalCentering)
@@ -77,10 +78,10 @@ class AlbumsTableViewCell: UITableViewCell {
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
-            albumLogo.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            albumLogo.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             albumLogo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
-            albumLogo.widthAnchor.constraint(equalToConstant: 60),
-            albumLogo.heightAnchor.constraint(equalToConstant: 60)
+            albumLogo.heightAnchor.constraint(equalToConstant: 60),
+            albumLogo.widthAnchor.constraint(equalToConstant: 60)
         ])
         
         NSLayoutConstraint.activate([
@@ -90,8 +91,8 @@ class AlbumsTableViewCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: albumNameLabel.topAnchor, constant: 10),
-            stackView.leadingAnchor.constraint(equalTo: albumNameLabel.trailingAnchor, constant: 10),
+            stackView.topAnchor.constraint(equalTo: albumNameLabel.bottomAnchor, constant: 10),
+            stackView.leadingAnchor.constraint(equalTo: albumLogo.trailingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
     }

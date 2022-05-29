@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75308ED028436EED000ECD3C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75308ECF28436EED000ECD3C /* UIViewController.swift */; };
 		75A153E4283FBF56001C4C2A /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A153E3283FBF56001C4C2A /* AlbumsViewController.swift */; };
 		75A153E6283FC476001C4C2A /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A153E5283FC476001C4C2A /* AlbumsTableViewCell.swift */; };
 		75AD6337283D2BCA00C25D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD6336283D2BCA00C25D37 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75308ECF28436EED000ECD3C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		75A153E3283FBF56001C4C2A /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		75A153E5283FC476001C4C2A /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		75AD6333283D2BCA00C25D37 /* ItunesTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				75AD634F283D3ACB00C25D37 /* UIStackView + Extension.swift */,
+				75308ECF28436EED000ECD3C /* UIViewController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				75AD6339283D2BCA00C25D37 /* SceneDelegate.swift in Sources */,
 				75AD6350283D3ACB00C25D37 /* UIStackView + Extension.swift in Sources */,
 				75A153E6283FC476001C4C2A /* AlbumsTableViewCell.swift in Sources */,
+				75308ED028436EED000ECD3C /* UIViewController.swift in Sources */,
 				75B359CE283E5E6800DE4BC2 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

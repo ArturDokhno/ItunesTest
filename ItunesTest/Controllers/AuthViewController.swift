@@ -58,7 +58,7 @@ class AuthViewController: UIViewController {
     private let signInButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .black
-        button.setTitle("LogIN", for: .normal)
+        button.setTitle("SignIN", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
@@ -86,7 +86,7 @@ class AuthViewController: UIViewController {
                                           spacing: 10,
                                           distribution: .fillProportionally)
         
-        buttonsStackView = UIStackView(arrangedSubviews: [signUpButton, signInButton],
+        buttonsStackView = UIStackView(arrangedSubviews: [signInButton, signUpButton],
                                        axis: .horizontal,
                                        spacing: 10,
                                        distribution: .fillProportionally)
@@ -109,7 +109,9 @@ class AuthViewController: UIViewController {
     }
     
     @objc func signInButtonTapped() {
-        print("SingIn")
+        let navVC = UINavigationController(rootViewController: AlbumsViewController())
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: true)
     }
 }
 
