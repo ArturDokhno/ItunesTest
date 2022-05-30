@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		75308ED028436EED000ECD3C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75308ECF28436EED000ECD3C /* UIViewController.swift */; };
+		7551CE9028448A910043EE22 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7551CE8F28448A910043EE22 /* UserInfoViewController.swift */; };
+		7551CE922844AFCE0043EE22 /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7551CE912844AFCE0043EE22 /* DetailAlbumViewController.swift */; };
+		75810ED72843BD5700B5E2C5 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75810ED62843BD5700B5E2C5 /* SongsCollectionViewCell.swift */; };
 		75A153E4283FBF56001C4C2A /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A153E3283FBF56001C4C2A /* AlbumsViewController.swift */; };
 		75A153E6283FC476001C4C2A /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A153E5283FC476001C4C2A /* AlbumsTableViewCell.swift */; };
 		75AD6337283D2BCA00C25D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD6336283D2BCA00C25D37 /* AppDelegate.swift */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		75308ECF28436EED000ECD3C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		7551CE8F28448A910043EE22 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		7551CE912844AFCE0043EE22 /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
+		75810ED62843BD5700B5E2C5 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		75A153E3283FBF56001C4C2A /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		75A153E5283FC476001C4C2A /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		75AD6333283D2BCA00C25D37 /* ItunesTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +96,8 @@
 				75AD633A283D2BCA00C25D37 /* AuthViewController.swift */,
 				75B359CD283E5E6700DE4BC2 /* SignUpViewController.swift */,
 				75A153E3283FBF56001C4C2A /* AlbumsViewController.swift */,
+				7551CE912844AFCE0043EE22 /* DetailAlbumViewController.swift */,
+				7551CE8F28448A910043EE22 /* UserInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				75A153E5283FC476001C4C2A /* AlbumsTableViewCell.swift */,
+				75810ED62843BD5700B5E2C5 /* SongsCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -192,7 +201,10 @@
 				75AD633B283D2BCA00C25D37 /* AuthViewController.swift in Sources */,
 				75AD6337283D2BCA00C25D37 /* AppDelegate.swift in Sources */,
 				75A153E4283FBF56001C4C2A /* AlbumsViewController.swift in Sources */,
+				75810ED72843BD5700B5E2C5 /* SongsCollectionViewCell.swift in Sources */,
 				75AD6339283D2BCA00C25D37 /* SceneDelegate.swift in Sources */,
+				7551CE922844AFCE0043EE22 /* DetailAlbumViewController.swift in Sources */,
+				7551CE9028448A910043EE22 /* UserInfoViewController.swift in Sources */,
 				75AD6350283D3ACB00C25D37 /* UIStackView + Extension.swift in Sources */,
 				75A153E6283FC476001C4C2A /* AlbumsTableViewCell.swift in Sources */,
 				75308ED028436EED000ECD3C /* UIViewController.swift in Sources */,

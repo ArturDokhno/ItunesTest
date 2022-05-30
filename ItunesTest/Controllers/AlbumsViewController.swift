@@ -22,14 +22,14 @@ class AlbumsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        setupViews()
         setupDelegate()
         setNavigationBar()
         setupSearchController()
         setConstraints()
     }
     
-    private func setupView() {
+    private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(tableView)
     }
@@ -56,7 +56,8 @@ class AlbumsViewController: UIViewController {
     }
     
     @objc private func userInfoButtonTapped() {
-        
+        let userInfoViewController = UserInfoViewController()
+        navigationController?.pushViewController(userInfoViewController, animated: true)
     }
 }
 
@@ -80,6 +81,11 @@ extension AlbumsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailAlbumViewController = DetailAlbumViewController()
+        navigationController?.pushViewController(detailAlbumViewController, animated: true)
     }
 }
 
