@@ -128,6 +128,10 @@ class SignUpViewController: UIViewController {
     private var elementsStackView = UIStackView()
     private let datePicker = UIDatePicker()
     
+    let nameValidType: String.ValidTypes = .name
+    let emailValidType: String.ValidTypes = .email
+    let passwordValidType: String.ValidTypes = .password
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -190,13 +194,123 @@ class SignUpViewController: UIViewController {
     @objc func signUpButtonTapped() {
         print("SignUpTap")
     }
+    
+    private func setTextfield(textField: UITextField, label: UILabel, validType: String.ValidTypes, validMessage: String, wrongMessage: String, string: String, range: NSRange) {
+        
+        let text = (textField.text ?? "") + string
+        let result: String
+        
+        if range.length == 1 {
+            let end = text.index(text.startIndex, offsetBy: text.count - 1)
+            result = String(text[text.startIndex..<end])
+        } else {
+            result = text
+        }
+        
+        textField.text = result
+        
+        if result.isValid(validType: validType) {
+            label.text = validMessage
+            label.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        } else {
+            label.text = wrongMessage
+            label.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        }
+    }
+    
+    private func setPhoneNumberMask(textField: UITextField, mask: String, string: String, range: NSRange) -> String {
+        
+        let text = textField.text ?? ""
+        
+        let phone = (text as NSString).replacingCharacters(in: range, with: string)
+        let number = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = ""
+        var index = number.startIndex
+        
+        for character in mask where index < number.endIndex {
+            if character == "X" {
+                result.append(number[index])
+                index = number.index(after: index)
+            } else {
+                result.append(character)
+            }
+        }
+        
+        if result.count == 18 {
+            phoneValidLabel.text = "Phone is valid"
+            phoneValidLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        } else {
+            phoneValidLabel.text = "Phone is not valid"
+            phoneValidLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        }
+        
+        return result
+    }
+    
+    private func ageIsValid() -> Bool {
+        let calendar = NSCalendar.current
+        let dateNow = Date()
+        let birthday = datePicker.date
+        
+        let age = calendar.dateComponents([.year], from: birthday, to: dateNow)
+        let ageYear = age.year
+        guard let ageUser = ageYear else { return false }
+        return ageUser < 18 ? false : true
+    }
+    
 }
-
 //MARK: - UITextFieldDelegate
 
 extension SignUpViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+ 
+        switch textField {
+                
+            case firstNameTextField:
+                setTextfield(textField: firstNameTextField,
+                             label: firstNameValidLabel,
+                             validType: nameValidType,
+                             validMessage: "Name is valid",
+                             wrongMessage: "Only A-Z characters ",
+                             string: string,
+                             range: range)
+                
+            case secondNameTextField:
+                setTextfield(textField: secondNameTextField,
+                             label: secondNameValidLabel,
+                             validType: nameValidType,
+                             validMessage: "Name is valid",
+                             wrongMessage: "Only A-Z characters ",
+                             string: string,
+                             range: range)
+                
+            case emailTextField:
+                setTextfield(textField: emailTextField,
+                             label: emailValidLabel,
+                             validType: emailValidType,
+                             validMessage: "Email is valid",
+                             wrongMessage: "Email is not valid",
+                             string: string,
+                             range: range)
+                
+            case passwordTextField:
+                setTextfield(textField: passwordTextField,
+                             label: passwordValidLabel,
+                             validType: passwordValidType,
+                             validMessage: "Password is valid",
+                             wrongMessage: "Password is not valid",
+                             string: string,
+                             range: range)
+            case phoneNumberTextField:
+                phoneNumberTextField.text = setPhoneNumberMask(textField: phoneNumberTextField,
+                                                               mask: "+X (XXX) XXX-XX-XX",
+                                                               string: string,
+                                                               range: range)
+                
+            default:
+                break
+        }
         
         return false
     }
@@ -208,6 +322,7 @@ extension SignUpViewController: UITextFieldDelegate {
         passwordTextField.resignFirstResponder()
         return true
     }
+
 }
 
 // MARK: - Show/Hide keyboard
@@ -282,4 +397,5 @@ extension SignUpViewController {
             signUpButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
+    
 }
