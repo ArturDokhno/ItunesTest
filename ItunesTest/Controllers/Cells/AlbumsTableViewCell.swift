@@ -11,7 +11,7 @@ class AlbumsTableViewCell: UITableViewCell {
     
     private let albumLogo: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .clear
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -73,6 +73,27 @@ class AlbumsTableViewCell: UITableViewCell {
                                 distribution: .equalCentering)
         
         self.addSubview(stackView)
+    }
+    
+    func configureAlbumCell(album: Album) {
+        if let urlString = album.artworkUrl100 {
+            NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
+                switch result {
+                    case .success(let data):
+                        let image = UIImage(data: data)
+                        self?.albumLogo.image = image
+                    case .failure(let error):
+                        self?.albumLogo.image = nil
+                        print("ERROR IMAGE: \(error.localizedDescription)")
+                }
+            }
+        } else {
+            albumLogo.image = nil
+        }
+        
+        albumNameLabel.text = album.collectionName
+        artistNameLabel.text = album.artistName
+        trackCountLabel.text = "\(album.trackCount) tracks"
     }
     
     private func setConstraints() {
