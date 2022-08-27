@@ -27,6 +27,7 @@
 		75AD6343283D2BCB00C25D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AD6341283D2BCB00C25D37 /* LaunchScreen.storyboard */; };
 		75AD6350283D3ACB00C25D37 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD634F283D3ACB00C25D37 /* UIStackView + Extension.swift */; };
 		75B359CE283E5E6800DE4BC2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B359CD283E5E6700DE4BC2 /* SignUpViewController.swift */; };
+		75E45F1528BA585800753689 /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E45F1428BA585800753689 /* SongsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		75AD6344283D2BCB00C25D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75AD634F283D3ACB00C25D37 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		75B359CD283E5E6700DE4BC2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		75E45F1428BA585800753689 /* SongsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				7507FBC128B8FB6F00870191 /* UserModel.swift */,
 				7507FBC328B9007500870191 /* AlertOk.swift */,
 				7507FBC528BA13CD00870191 /* AlbumModel.swift */,
+				75E45F1428BA585800753689 /* SongsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				75AD6350283D3ACB00C25D37 /* UIStackView + Extension.swift in Sources */,
 				75A153E6283FC476001C4C2A /* AlbumsTableViewCell.swift in Sources */,
 				7507FBCB28BA16BF00870191 /* NetworkDataFetch.swift in Sources */,
+				75E45F1528BA585800753689 /* SongsModel.swift in Sources */,
 				7507FBC628BA13CD00870191 /* AlbumModel.swift in Sources */,
 				75308ED028436EED000ECD3C /* UIViewController.swift in Sources */,
 				75B359CE283E5E6800DE4BC2 /* SignUpViewController.swift in Sources */,
